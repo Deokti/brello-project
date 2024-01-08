@@ -1,24 +1,27 @@
-import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import "./App.scss";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const { t, i18n } = useTranslation("common");
+
+  const onSelectedLang = async (lang: string) => {
+    await i18n.changeLanguage(lang);
+  };
 
   return (
     <>
-      {/* eslint-disable-next-line i18next/no-literal-string */}
-      <h1>Vite + React</h1>
-      <div className="card">
-        {/* eslint-disable-next-line i18next/no-literal-string */}
-        <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
-        <p>
-          {/* eslint-disable-next-line i18next/no-literal-string */}
-          {/* eslint-disable-next-line i18next/no-literal-string */}
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+      <ul style={{ display: "flex", gap: 10, justifyContent: "center", padding: 0 }}>
+        <li onClick={() => onSelectedLang("ru")}>
+          <button>RU</button>
+        </li>
+        <li onClick={() => onSelectedLang("en")}>
+          <button>EN</button>
+        </li>
+      </ul>
+      <div style={{ marginTop: 20 }}>
+        <h1>{t("title")}</h1>
+        <p>{t("description")}</p>
       </div>
-      {/* eslint-disable-next-line i18next/no-literal-string */}
-      <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
     </>
   );
 }
