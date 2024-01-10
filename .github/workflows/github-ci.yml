@@ -1,0 +1,15 @@
+name: GitHub Actions for Linting
+on: ["pull_request"]
+jobs:
+  dependencies_install:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18.x'
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
