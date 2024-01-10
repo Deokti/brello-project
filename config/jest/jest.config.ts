@@ -8,10 +8,15 @@ export default {
   testEnvironment: "jest-environment-jsdom",
   coveragePathIgnorePatterns: ["\\\\node_modules\\\\"],
   moduleFileExtensions: ["js", "jsx", "ts", "tsx", "json", "node"],
-  moduleDirectories: ["node_modules", "src"],
+  moduleDirectories: ["node_modules", "src", "<rootDir>"],
   testMatch: ["<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)"],
+  setupFilesAfterEnv: ["<rootDir>config/jest/setupTests.ts"],
   moduleNameMapper: {
     "\\.(css|scss)$": "identity-obj-proxy",
     "\\.(gif|ttf|eot|svg|png)$": path.resolve(__dirname, "jest.mock.tsx"),
+
+    // ALIAS
+    "^@app(.*)$": "<rootDir>/src/app$1",
+    "^@shared(.*)$": "<rootDir>/src/shared$1",
   },
 };
