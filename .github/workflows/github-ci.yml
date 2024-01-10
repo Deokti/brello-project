@@ -1,4 +1,4 @@
-name: GitHub Actions for Linting and Testing
+name: GitHub Actions for Linting
 on: ["pull_request"]
 jobs:
   Install:
@@ -14,7 +14,7 @@ jobs:
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
-        run: echo "::save-state name=dir::$(yarn cache dir)"
+        run: echo "name=dir::$(yarn cache dir)" >> $GITHUB_STATE
 
       - name: Cache yarn cache
         uses: actions/cache@v3
@@ -54,7 +54,7 @@ jobs:
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
-        run: echo "::save-state name=dir::$(yarn cache dir)"
+        run: echo "name=dir::$(yarn cache dir)" >> $GITHUB_STATE
 
       - name: Cache yarn cache
         uses: actions/cache@v3
@@ -82,9 +82,6 @@ jobs:
 
   Tests:
     needs: [ Linting ]
-    strategy:
-      matrix:
-        versions: [16, 18, 20]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -93,11 +90,11 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.versions }}
+          node-version: '20.x'
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
-        run: echo "::save-state name=dir::$(yarn cache dir)"
+        run: echo "name=dir::$(yarn cache dir)" >> $GITHUB_STATE
 
       - name: Cache yarn cache
         uses: actions/cache@v3
