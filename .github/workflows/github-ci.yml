@@ -14,13 +14,13 @@ jobs:
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
-        run: echo "name=dir::$(yarn cache dir)" >> $GITHUB_STATE
+        run: echo "dir=$RUNNER_TEMP/yarn-cache" >> $GITHUB_ENV
 
       - name: Cache yarn cache
         uses: actions/cache@v3
         id: cache-yarn-cache
         with:
-          path: ${{ env.dir }}
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
@@ -54,13 +54,13 @@ jobs:
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
-        run: echo "name=dir::$(yarn cache dir)" >> $GITHUB_STATE
+        run: echo "dir=$RUNNER_TEMP/yarn-cache" >> $GITHUB_ENV
 
       - name: Cache yarn cache
         uses: actions/cache@v3
         id: cache-yarn-cache
         with:
-          path: ${{ env.dir }}
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
@@ -94,13 +94,13 @@ jobs:
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
-        run: echo "name=dir::$(yarn cache dir)" >> $GITHUB_STATE
+        run: echo "dir=$RUNNER_TEMP/yarn-cache" >> $GITHUB_ENV
 
       - name: Cache yarn cache
         uses: actions/cache@v3
         id: cache-yarn-cache
         with:
-          path: ${{ env.dir }}
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
