@@ -1,7 +1,10 @@
 import { useTranslation } from "react-i18next";
-import "./App.scss";
 
-function App() {
+import "@fontsource/roboto";
+import "@/shared/config/i18n/i18n";
+import "./styles/index.scss";
+
+export function App() {
   const { t, i18n } = useTranslation("common");
 
   const onSelectedLang = async (lang: string) => {
@@ -25,5 +28,3 @@ function App() {
     </>
   );
 }
-
-export default App;
