@@ -24,9 +24,7 @@
     /* Alias */
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
-      "@shared/*": ["./src/shared/*"],
-      "@app/*": ["./src/app/*"]
+      "~/*": ["./src/*"],
     }
   },
   "include": ["src"],
