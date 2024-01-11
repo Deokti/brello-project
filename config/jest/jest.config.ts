@@ -16,6 +16,6 @@ export default {
     "\\.(gif|ttf|eot|svg|png)$": path.resolve(__dirname, "jest.mock.tsx"),
 
     // ALIAS
-    "^~/(.*)$": "<rootDir>/src/$1",
+    "^@/(.*)$": "<rootDir>/src/$1",
   },
 };
