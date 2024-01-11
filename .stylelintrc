@@ -1,0 +1,34 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-order-config-standard"
+  ],
+  "plugins": [
+    "stylelint-order"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "**/*.scss"
+      ],
+      "customSyntax": "postcss-scss"
+    }
+  ],
+  "rules": {
+    "color-hex-length": "long",
+    "number-max-precision": 8,
+    "keyframes-name-pattern": null,
+    "declaration-block-no-redundant-longhand-properties": null,
+    "no-duplicate-selectors": null,
+    "selector-type-no-unknown": null,
+    "import-notation": "string",
+    "function-url-quotes": null,
+    "selector-pseudo-class-no-unknown": null,
+    "function-no-unknown": null,
+    "no-descending-specificity": null,
+    "color-function-notation": "modern",
+    "alpha-value-notation": "number",
+    "selector-class-pattern": null,
+    "at-rule-no-unknown": null
+  }
+}

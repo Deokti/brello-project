@@ -1,30 +1,45 @@
-# React + TypeScript + Vite
+# Brello
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Проект в рамках курса [Разработка по-взрослому](https://t.me/sergeysova/916).
 
-Currently, two official plugins are available:
+В `README` можно найти информацию о технологическом стеке, архитектурной методологии, линтинге, интернационализации и других ключевых аспектах проекта.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Приложение разворачивается на `Netlify` и его можно посмотреть по ссылке: [Brello Project](https://dev--courageous-cassata-73d440.netlify.app)
 
-## Expanding the ESLint configuration
+## Технологический стек
+- `React`: библиотека для создания пользовательских интерфейсов.
+- `TypeScript`: расширение JavaScript, который предоставляет статическую типизацию поверх JavaScript
+- `Effector`: библиотека для управления состоянием в приложениях.
+- `Atomic Router`: маршрутизатор, построенный в соответствии с концепциями атомарного дизайна.
+- `Patronum`: о библиотека для работы с событиями в стиле *Event as Data*
+- `Jest`: фреймворк для тестирования JavaScript-приложений.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Архитектурная методология
+Проект использует [Feature-Sliced Design](https://feature-sliced.design/docs/get-started/overview), цель которой, как сказано на официальном сайте — сделать проект более понятным и структурированным в условиях постоянно меняющихся требований бизнеса.
 
-- Configure the top-level `parserOptions` property like this:
+Другими словами `Feature-Sliced Design` это сборник правил и соглашений по организации кода.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Линтинг
+Для обеспечения качества кода и единого стиля в проекте используются следующие инструменты:
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- `Eslint`: линтер для JavaScript и TypeScript кода.
+  - Запуск: `npm run lint:ts`
+  - Автоматическое исправление: `npm run lint:ts:fix`
+- `Prettier`: форматтер кода для обеспечения единообразного стиля.
+- `Stylelint`: линтер для SCSS-файлов.
+  - Запуск: `npm run lint:scss`
+  - Автоматическое исправление: `npm run lint:scss:fix`
+- `Husky`: используется для предотвращения коммита кода с линтинг-проблемами.
+
+## Интернационализация (i18n)
+Проект поддерживает интернационализацию на двух языках:
+- Английский (базовый)
+- Русский
+
+## Минимальная поддержка браузеров
+Проект ориентирован на работу в следующих браузерах:
+- Chrome (и другие браузеры, основанные на Chromium) - последние 2 версии
+- Safari - последние 2 версии
+- Firefox - последние 2 версии
+
+
