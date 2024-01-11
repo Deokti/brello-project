@@ -11,4 +11,4 @@ i18n.use(initReactI18next).init({
   resources: { en: { common: {} } },
 });
 
-export default i18n;
+export { i18n as i18nMock };

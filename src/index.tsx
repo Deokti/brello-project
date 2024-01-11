@@ -1,9 +1,5 @@
 import ReactDOM from "react-dom/client";
-import App from "@/app/App/App";
-
-import "@fontsource/roboto";
-import "@/app/styles/index.scss";
-import "@/shared/config/i18n/i18n.ts";
+import { App } from "@/app";
 
 const root = document.getElementById("root")!;
 

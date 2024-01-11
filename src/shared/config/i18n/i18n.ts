@@ -10,4 +10,4 @@ i18n.use(Backend).use(LanguageDetector).use(initReactI18next).init({
   interpolation: {},
 });
 
-export default i18n;
+export { i18n };

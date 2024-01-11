@@ -10,7 +10,7 @@ export default {
   moduleFileExtensions: ["js", "jsx", "ts", "tsx", "json", "node"],
   moduleDirectories: ["node_modules", "src", "<rootDir>"],
   testMatch: ["<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)"],
-  setupFilesAfterEnv: ["<rootDir>config/jest/setupTests.ts"],
+  setupFilesAfterEnv: ["<rootDir>config/jest/setup-tests.ts"],
   moduleNameMapper: {
     "\\.(css|scss)$": "identity-obj-proxy",
     "\\.(gif|ttf|eot|svg|png)$": path.resolve(__dirname, "jest.mock.tsx"),
