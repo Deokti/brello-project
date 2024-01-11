@@ -9,7 +9,6 @@ import "@shared/config/i18n/i18n.ts";
 const root = document.getElementById("root")!;
 
 ReactDOM.createRoot(root).render(
-  <React.StrictMode>
     <App />
   </React.StrictMode>,
 );
