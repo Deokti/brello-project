@@ -2,3 +2,10 @@
 @import "./variables/global";
 @import "./variables/theme";
 
+.app {
+  display: flex;
+  flex-direction: column;
+
+  padding: 20px;
+  gap: 20px;
+}
