@@ -26,8 +26,10 @@ export const AuthPageLayout = (props: AuthPageLayoutProps) => {
         <div className={styles.children}>{children}</div>
 
         <footer className={styles.footer}>
+          {/* eslint-disable-next-line i18next/no-literal-string */}
           <span>@ Brello {fullYear}</span>
           <span>
+            {/* eslint-disable-next-line i18next/no-literal-string */}
             <MailIcon /> <a href="mailto:help@brello.io">help@brello.io</a>
           </span>
         </footer>
