@@ -3,7 +3,7 @@ import cx from "classnames";
 
 import styles from "./Button.module.scss";
 
-type ButtonVariant = "contained" | "outlined";
+type ButtonVariant = "contained" | "outlined" | "text";
 type ButtonColor = "primary" | "secondary" | "error";
 type ButtonSize = "sm" | "md" | "lg" | "xl" | "xl2";
 
