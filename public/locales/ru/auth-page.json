@@ -1,9 +1,9 @@
 {
   "sign-in-page": {
-    "title": "Sign In",
-    "subtitle": "Start your 30-day free trial.",
-    "input-placeholder": "Enter your email",
-    "get-started": "Get started",
-    "get-stated-with-google": "Sign up with Google"
+    "title": "Войти",
+    "subtitle": "Начните свою 30-дневную бесплатную пробную версию.",
+    "input-placeholder": "Введите свой адрес электронной почты",
+    "get-started": "Начать",
+    "get-stated-with-google": "Зарегистрируйтесь через Google"
   }
 }
