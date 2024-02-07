@@ -5,5 +5,10 @@
     "input-placeholder": "Enter your email",
     "get-started": "Get started",
     "get-stated-with-google": "Sign up with Google"
+  },
+  "sign-in-page-successful": {
+    "title": "Check your email",
+    "subtitle": "We sent a login link to",
+    "try-again": "Try again"
   }
 }

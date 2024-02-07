@@ -1,0 +1,27 @@
+h1 {
+  margin-top: 10px;
+
+  color: var(--gray-color-900);
+
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 38px
+
+}
+
+h2,
+span {
+  color: var(--gray-color-600);
+
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+span {
+  font-weight: 500;
+}
+
+.button {
+  margin-top: 20px;
+}
