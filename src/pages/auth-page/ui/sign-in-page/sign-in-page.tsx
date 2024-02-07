@@ -1,12 +1,11 @@
 import { useTranslation } from "react-i18next";
 
 import { Input } from "@/shared/ui/Input";
-import { SignInPageSuccessful } from "../sign-in-page-successful/sign-in-page-successful.tsx";
 
 import { Button } from "@/shared/ui/Button";
 import GoogleIcon from "../../assets/google-icon.svg?react";
-
 import { AuthPageLayout } from "../components/auth-page-layout";
+
 import styles from "./sign-in-page.module.scss";
 
 export const SignInPage = () => {
@@ -16,8 +15,6 @@ export const SignInPage = () => {
     <div className={styles.root}>
       <AuthPageLayout>
         <div className={styles.inner}>
-          <SignInPageSuccessful email={"deokneks@gmail.com"} />
-
           <h1 className={styles.title}>{t("sign-in-page.title")}</h1>
           <h2 className={styles.subtitle}>{t("sign-in-page.subtitle")}</h2>
 

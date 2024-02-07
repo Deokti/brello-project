@@ -30,7 +30,7 @@ export const SignInPageSuccessful = (props: SignInPageSuccessfulProps) => {
         variant="text"
         className={styles.button}
       >
-        {t("sign-in-page-successful.try-again")}
+        {t("sign-in-page-successful.back-to-log-in")}
       </Button>
     </div>
   );
