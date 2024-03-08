@@ -18,6 +18,8 @@
   "dependencies": {
     "@fontsource/roboto": "^5.0.8",
     "classnames": "^2.5.1",
+    "effector": "^23.2.0",
+    "effector-react": "^23.2.0",
     "i18next": "^23.7.16",
     "i18next-browser-languagedetector": "^7.2.0",
     "i18next-http-backend": "^2.4.2",
