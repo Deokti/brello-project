@@ -1,0 +1,44 @@
+.inner {
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.title {
+  color: var(--gray-color-900);
+
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 38px;
+}
+
+.subtitle {
+  color: var(--gray-color-600);
+
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.input {
+  margin-top: 30px;
+}
+
+.button {
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+@media screen and (width <= 768px) {
+  .title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .inner {
+    margin-top: 24px;
+  }
+
+  .footer {
+    margin-top: 24px;
+  }
+}

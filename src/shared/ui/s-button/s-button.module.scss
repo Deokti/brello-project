@@ -1,0 +1,112 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+
+  max-width: 320px;
+  padding: 10px 40px;
+
+  white-space: nowrap;
+
+  border: none;
+  border-radius: 8px;
+  background-color: transparent;
+
+  font-weight: 500;
+  gap: 12px;
+
+  &:disabled {
+    cursor: default;
+    pointer-events: none;
+
+    opacity: 0.5;
+  }
+
+  &:focus {
+    outline: none;
+    filter: brightness(0.9);
+  }
+
+  &:hover {
+    filter: brightness(0.8);
+  }
+}
+
+.primary {
+  background-color: var(--primary-color);
+}
+
+.secondary {
+  color: var(--gray-color-700);
+  border: 1px solid var(--secondary-color);
+}
+
+.error {
+  background-color: var(--error-color-500);
+}
+
+.button.contained {
+  color: var(--white-color);
+}
+
+.button.outlined {
+  background-color: transparent;
+}
+
+.button.text {
+  justify-content: left;
+
+  width: auto;
+  padding: 0;
+
+  border-color: transparent;
+  background-color: transparent;
+}
+
+.sm,
+.md {
+  padding-top: 8px;
+  padding-bottom: 8px;
+
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.md {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.lg,
+.xl {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.xl {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.xl2 {
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.fullWidth {
+  max-width: 100%;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+
+  svg {
+    fill: currentcolor;
+  }
+}
