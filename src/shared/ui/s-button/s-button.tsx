@@ -42,6 +42,7 @@ export const SButton = (props: ButtonProps) => {
     <button
       {...otherProps}
       disabled={disabled}
+      aria-disabled={disabled}
       className={cx(styles.button, mods, additional)}
     >
       {leftIcon && <span className={styles.icon}>{leftIcon}</span>}

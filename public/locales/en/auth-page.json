@@ -15,5 +15,8 @@
     "title": "Some error happened",
     "subtitle": "With description (error with server)",
     "try-again": "Try again"
+  },
+  "errors": {
+    "InvalidEmail": "Must be a valid email"
   }
 }

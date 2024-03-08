@@ -1,4 +1,7 @@
+import { FormEvent, useCallback } from "react";
+import { useUnit } from "effector-react";
 import { useTranslation } from "react-i18next";
+import { ClipLoader } from 'react-spinners';
 
 import { SInput } from "@/shared/ui/s-input";
 
@@ -6,22 +9,22 @@ import { SButton } from "@/shared/ui/s-button";
 import GoogleIcon from "../../assets/google-icon.svg?react";
 import { AuthPageLayout } from "../../layout/auth-page-layout";
 
-import { $email, emailChanged, emailSubmitted } from '../../model/auth-model';
+import { $email, $error, $pedding, $success, emailChanged, formSubmitted } from '../../model/auth';
 
 import styles from "./sign-in-page.module.scss";
-import { useUnit } from "effector-react";
-import { FormEvent, useCallback } from "react";
 
 export const SignInPage = () => {
   const { t } = useTranslation("auth-page");
 
-  const [email, onChangeEmail, handleSubmitForm] = useUnit([$email, emailChanged, emailSubmitted]);
-
+  const [email, pedding, error, success] = useUnit([$email, $pedding, $error, $success]);
+  const [handleEmail, handleSubmitForm] = useUnit([emailChanged, formSubmitted]);
 
   const onSubmitForm = useCallback((event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     handleSubmitForm();
   }, [handleSubmitForm])
+
+  const errorMessage = error && t(`errors.${error}`);
 
   return (
     <div className={styles.root}>
@@ -34,13 +37,18 @@ export const SignInPage = () => {
             label={"Email"}
             value={email}
             placeholder={t("sign-in-page.input-placeholder")}
-            onChange={(event) => onChangeEmail(event.target.value)}
+            onChange={(event) => handleEmail(event.target.value)}
             className={styles.input}
+            disabled={pedding}
+            errorMessage={errorMessage}
           />
 
           <SButton
             fullWidth
             className={styles.button}
+            disabled={pedding}
+            type="submit"
+            leftIcon={pedding && <ClipLoader color="#fff" size={20} />}
           >
             {t("sign-in-page.get-started")}
           </SButton>
@@ -49,6 +57,7 @@ export const SignInPage = () => {
             leftIcon={<GoogleIcon />}
             variant={"outlined"}
             color={"secondary"}
+            disabled={pedding}
           >
             {t("sign-in-page.get-stated-with-google")}
           </SButton>
