@@ -5,5 +5,10 @@
     "input-placeholder": "Введите свой адрес электронной почты",
     "get-started": "Начать",
     "get-stated-with-google": "Зарегистрируйтесь через Google"
+  },
+  "sign-in-page-successful": {
+    "title": "Проверьте свою электронную почту",
+    "subtitle": "Мы отправили ссылку для входа на",
+    "try-again": "Пробовать снова"
   }
 }

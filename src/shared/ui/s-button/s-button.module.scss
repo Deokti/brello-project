@@ -8,6 +8,8 @@
   max-width: 320px;
   padding: 10px 40px;
 
+  white-space: nowrap;
+
   border: none;
   border-radius: 8px;
   background-color: transparent;
@@ -34,7 +36,6 @@
 
 .primary {
   background-color: var(--primary-color);
-
 }
 
 .secondary {
@@ -51,6 +52,16 @@
 }
 
 .button.outlined {
+  background-color: transparent;
+}
+
+.button.text {
+  justify-content: left;
+
+  width: auto;
+  padding: 0;
+
+  border-color: transparent;
   background-color: transparent;
 }
 
@@ -96,8 +107,6 @@
   align-items: center;
 
   svg {
-    width: 24px;
-    height: 24px;
     fill: currentcolor;
   }
 }

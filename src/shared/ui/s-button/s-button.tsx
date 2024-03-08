@@ -1,9 +1,9 @@
 import { ButtonHTMLAttributes, ReactNode } from "react";
 import cx from "classnames";
 
-import styles from "./Button.module.scss";
+import styles from "./s-button.module.scss";
 
-type ButtonVariant = "contained" | "outlined";
+type ButtonVariant = "contained" | "outlined" | "text";
 type ButtonColor = "primary" | "secondary" | "error";
 type ButtonSize = "sm" | "md" | "lg" | "xl" | "xl2";
 
@@ -18,7 +18,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: ButtonSize;
 }
 
-export const Button = (props: ButtonProps) => {
+export const SButton = (props: ButtonProps) => {
   const {
     className,
     fullWidth,

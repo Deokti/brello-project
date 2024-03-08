@@ -2,6 +2,10 @@
 @import "./variables/global";
 @import "./variables/theme";
 
+body {
+  font-family: var(--font-family-main);
+}
+
 .app {
   width: 100%;
 }

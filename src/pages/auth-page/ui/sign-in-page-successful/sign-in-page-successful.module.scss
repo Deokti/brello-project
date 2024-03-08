@@ -1,17 +1,16 @@
-.inner {
-  max-width: 360px;
-  margin: 0 auto;
-}
+h1 {
+  margin-top: 10px;
 
-.title {
   color: var(--gray-color-900);
 
   font-size: 30px;
   font-weight: 600;
-  line-height: 38px;
+  line-height: 38px
+
 }
 
-.subtitle {
+h2,
+span {
   color: var(--gray-color-600);
 
   font-size: 16px;
@@ -19,26 +18,17 @@
   line-height: 24px;
 }
 
-.input {
-  margin-top: 30px;
+span {
+  font-weight: 500;
 }
 
 .button {
-  margin-top: 24px;
-  margin-bottom: 16px;
+  margin-top: 20px;
 }
 
 @media screen and (width <= 768px) {
-  .title {
+  h1 {
     font-size: 24px;
     line-height: 32px;
-  }
-
-  .inner {
-    margin-top: 24px;
-  }
-
-  .footer {
-    margin-top: 24px;
   }
 }

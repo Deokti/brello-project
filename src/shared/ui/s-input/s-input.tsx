@@ -1,7 +1,7 @@
 import { InputHTMLAttributes, ReactNode } from "react";
 import cx from "classnames";
 
-import styles from "./Input.module.scss";
+import styles from "./s-input.module.scss";
 
 type InputSize = "sm" | "md";
 
@@ -16,7 +16,7 @@ interface InputProps extends InputHTMLAttributesCustom {
   size?: InputSize;
 }
 
-export const Input = (props: InputProps) => {
+export const SInput = (props: InputProps) => {
   const {
     className,
     label,
