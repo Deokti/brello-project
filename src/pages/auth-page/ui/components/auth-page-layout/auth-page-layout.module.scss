@@ -44,3 +44,44 @@
   background-position: right;
   background-size: cover;
 }
+
+@media screen and (width <= 768px) {
+  .root {
+    flex-direction: column-reverse;
+  }
+
+  .header {
+    svg path {
+      display: none;
+    }
+
+    svg g path {
+      display: block;
+    }
+  }
+
+  .right {
+    max-height: 68px;
+
+    background-position: initial;
+  }
+
+  .footer {
+    margin-top: 32px;
+  }
+}
+
+@media screen and (width <= 425px) {
+  .left {
+    padding: 16px;
+  }
+
+  .right {
+    background-image: url("../../../assets/shapes-mobile.svg");
+    background-position: center;
+  }
+
+  .footer {
+    display: none;
+  }
+}

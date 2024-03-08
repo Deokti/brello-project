@@ -25,3 +25,10 @@ span {
 .button {
   margin-top: 20px;
 }
+
+@media screen and (width <= 768px) {
+  h1 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
