@@ -4,7 +4,7 @@ import { SInput } from "@/shared/ui/s-input";
 
 import { SButton } from "@/shared/ui/s-button";
 import GoogleIcon from "../../assets/google-icon.svg?react";
-import { AuthPageLayout } from "../components/auth-page-layout";
+import { AuthPageLayout } from "../../layout/auth-page-layout";
 
 import styles from "./sign-in-page.module.scss";
 
