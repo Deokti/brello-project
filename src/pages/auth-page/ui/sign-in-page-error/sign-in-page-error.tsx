@@ -3,7 +3,7 @@ import ErrorIcon from "../../assets/sign-in-error.svg?react";
 import LeftIcon from "@/shared/assets/arrow-left.svg?react";
 
 import styles from "./sign-in-page-error.module.scss";
-import { Button } from "@/shared/ui/Button";
+import { Button } from "@/shared/ui/s-button";
 import { useTranslation } from "react-i18next";
 
 interface SignInPageErrorProps {
