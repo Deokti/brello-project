@@ -5,6 +5,7 @@ import LogoIcon from "@/shared/assets/logo.svg?react";
 import MailIcon from "@/shared/assets/mail.svg?react";
 
 import styles from "./auth-page-layout.module.scss";
+import { LocaleSwitcher } from "@/features/LocaleSwitcher";
 
 interface AuthPageLayoutProps {
   className?: string;
@@ -21,6 +22,7 @@ export const AuthPageLayout = (props: AuthPageLayoutProps) => {
       <div className={styles.left}>
         <header className={styles.header}>
           <LogoIcon />
+          <LocaleSwitcher />
         </header>
 
         <div className={styles.children}>{children}</div>

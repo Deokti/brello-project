@@ -1,7 +1,8 @@
-import { attach, createEffect, createEvent, createStore, sample } from "effector";
+import { attach, createEvent, createStore, sample } from "effector";
 import { SignInPageError } from "./types";
 import { vilidateEmail } from "./constants";
-import { debug, not } from "patronum";
+import { not } from "patronum";
+import { apiAuth } from "@/shared/lib/api/apiAuth";
 
 /**
  * Аутентификация через ввод email
@@ -15,19 +16,8 @@ import { debug, not } from "patronum";
  *  4.2. $error Если запрос проволился, перенаправляем на странице `auth/error`
  */
 
-const apiPostAuthFx = createEffect(async () => {
-  return new Promise((resolve, reject) => {
-    const random = Math.floor(Math.random() * 10) > 5;
 
-    if (random) reject({ status: 500, 
-      error: JSON.stringify("На сервере произошла ошибка. Повторите попытку позднее")  
-    });
-    
-    resolve({ status: 200 });
-  })
-})
-
-const signInPost = attach({ effect: apiPostAuthFx })
+const signInPost = attach({ effect: apiAuth.loginByEmailAndPassword });
 
 export const emailChanged = createEvent<string>("");
 export const formSubmitted = createEvent(); 
