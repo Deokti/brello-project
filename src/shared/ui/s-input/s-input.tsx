@@ -10,7 +10,7 @@ type InputHTMLAttributesCustom = Omit<InputHTMLAttributes<HTMLInputElement>, "si
 interface InputProps extends InputHTMLAttributesCustom {
   className?: string;
   label?: string;
-  errorMessage?: string;
+  errorMessage?: string | null | undefined;
   leftIcon?: ReactNode;
   rightIcon?: ReactNode;
   size?: InputSize;

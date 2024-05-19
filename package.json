@@ -17,13 +17,19 @@
   },
   "dependencies": {
     "@fontsource/roboto": "^5.0.8",
+    "@supabase/supabase-js": "^2.43.2",
     "classnames": "^2.5.1",
+    "effector": "^23.2.0",
+    "effector-react": "^23.2.0",
     "i18next": "^23.7.16",
     "i18next-browser-languagedetector": "^7.2.0",
     "i18next-http-backend": "^2.4.2",
+    "patronum": "^2.2.0",
     "react": "^18.2.0",
+    "react-click-away-listener": "^2.2.3",
     "react-dom": "^18.2.0",
-    "react-i18next": "^14.0.0"
+    "react-i18next": "^14.0.0",
+    "react-spinners": "^0.13.8"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.24.0",
