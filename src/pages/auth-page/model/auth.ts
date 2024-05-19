@@ -1,6 +1,6 @@
 import { attach, createEvent, createStore, sample } from "effector";
 import { SignInPageError } from "./types";
-import { vilidateEmail } from "./constants";
+import { validateEmail } from "./constants";
 import { not } from "patronum";
 import { apiAuth } from "@/shared/lib/api/apiAuth";
 
@@ -16,7 +16,7 @@ import { apiAuth } from "@/shared/lib/api/apiAuth";
  *  4.2. $error Если запрос провалился, перенаправляем на странице `auth/error`
  */
 
-const signInPost = attach({ effect: apiAuth.loginByEmailAndPassword });
+const signInPost = attach({ effect: apiAuth.logInByEmail });
 
 export const emailChanged = createEvent<string>("");
 export const formSubmitted = createEvent();
@@ -27,7 +27,7 @@ export const $pending = createStore<boolean>(false);
 export const $error = createStore<SignInPageError | null>(null);
 export const $success = createStore<boolean>(false);
 
-const $isValidEmail = $email.map((email) => vilidateEmail.test(email));
+const $isValidEmail = $email.map((email) => validateEmail.test(email));
 
 $email.on(emailChanged, (_, newEmailValue) => newEmailValue);
 
