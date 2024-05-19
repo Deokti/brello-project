@@ -1,9 +1,9 @@
-import { signInMagicLinkFx } from "./signInMagicLinkFx";
+import { signInByEmailFx } from "./signInEmailFx";
 import { getMeFx } from "./getMe";
 import { logout } from "./logout";
 
 export const apiAuth = {
   getMe: getMeFx,
-  logInByEmail: signInMagicLinkFx,
+  logInByEmail: signInByEmailFx,
   signInOut: logout,
 };
