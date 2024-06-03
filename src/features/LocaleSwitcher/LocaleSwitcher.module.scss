@@ -25,7 +25,9 @@
   bottom: -100px;
   left: 0;
 
-  width: 100%;
+  min-width: 100%;
+
+  max-width: max-content;
 
   margin-bottom: 0;
   padding: 12px;
