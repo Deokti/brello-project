@@ -3,6 +3,8 @@ import { SignInPageError } from "./types";
 import { validateEmail } from "./constants";
 import { not } from "patronum";
 import { apiAuth } from "@/shared/lib/api/apiAuth";
+import { redirect } from "atomic-router";
+import { ROUTES } from "@/shared/routing";
 
 /**
  * Аутентификация через ввод email
@@ -20,6 +22,8 @@ const signInPost = attach({ effect: apiAuth.logInByEmail });
 
 export const emailChanged = createEvent<string>("");
 export const formSubmitted = createEvent();
+
+export const tryAgainClicked = createEvent();
 
 export const $email = createStore<string>("");
 
@@ -52,4 +56,14 @@ sample({
   source: $email,
   filter: $isValidEmail,
   target: signInPost,
+});
+
+redirect({
+  clock: signInPost.failData,
+  route: ROUTES.AUTH.ERROR,
+});
+
+redirect({
+  clock: tryAgainClicked,
+  route: ROUTES.AUTH.SIGN_IN,
 });

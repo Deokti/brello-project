@@ -23,6 +23,8 @@
   display: block;
 
   width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
 }
 
 .footer {
@@ -54,6 +56,10 @@
 @media screen and (width <= 768px) {
   .root {
     flex-direction: column-reverse;
+  }
+
+  .children {
+    margin-top: 24px;
   }
 
   .header {
