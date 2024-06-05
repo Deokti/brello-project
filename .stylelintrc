@@ -1,16 +1,9 @@
 {
-  "extends": [
-    "stylelint-config-standard",
-    "stylelint-order-config-standard"
-  ],
-  "plugins": [
-    "stylelint-order"
-  ],
+  "extends": ["stylelint-config-standard", "stylelint-order-config-standard"],
+  "plugins": ["stylelint-order"],
   "overrides": [
     {
-      "files": [
-        "**/*.scss"
-      ],
+      "files": ["**/*.scss"],
       "customSyntax": "postcss-scss"
     }
   ],

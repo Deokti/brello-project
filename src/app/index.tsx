@@ -1,8 +1,10 @@
 import "@fontsource/roboto";
-import "@/shared/config/i18n/i18n";
-import "./styles/index.scss";
 
 import { RoutesView } from "@/pages";
+
+import "@/shared/config/i18n/i18n";
+
+import "./styles/index.scss";
 
 export function App() {
   return (

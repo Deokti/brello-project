@@ -1,16 +1,17 @@
 import cx from "classnames";
-import ErrorIcon from "../../assets/sign-in-error.svg?react";
-import LeftIcon from "@/shared/assets/arrow-left.svg?react";
-import { motion } from "framer-motion";
-
-import styles from "./sign-in-page-error.module.scss";
-import { SButton } from "@/shared/ui/s-button";
-import { useTranslation } from "react-i18next";
-import { AuthPageLayout } from "@/pages/auth-page/layout/auth-page-layout";
-
 import { useUnit } from "effector-react";
+import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+
+import { AuthPageLayout } from "@/pages/auth-page/layout/auth-page-layout";
 import { tryAgainClicked } from "@/pages/auth-page/model/auth.ts";
 import { animationFromRightToLeft } from "@/pages/auth-page/model/motion.animate.ts";
+
+import LeftIcon from "@/shared/assets/arrow-left.svg?react";
+import { SButton } from "@/shared/ui/s-button";
+
+import ErrorIcon from "../../assets/sign-in-error.svg?react";
+import styles from "./sign-in-page-error.module.scss";
 
 interface SignInPageErrorProps {
   className?: string;

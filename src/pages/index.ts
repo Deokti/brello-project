@@ -1,8 +1,9 @@
 import { createRoutesView } from "atomic-router-react";
+
 import {
+  SignInPageErrorRoute,
   SignInPageRoute,
   SignInPageSuccessfulRoute,
-  SignInPageErrorRoute,
 } from "@/pages/auth-page";
 import { OnboardingPageRoute } from "@/pages/onboarding-page";
 

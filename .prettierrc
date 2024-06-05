@@ -9,5 +9,19 @@
   "arrowParens": "always",
   "useTabs": false,
   "printWidth": 100,
-  "singleAttributePerLine": true
+  "singleAttributePerLine": true,
+  "plugins": ["@trivago/prettier-plugin-sort-imports"],
+  "importOrderSortSpecifiers": true,
+  "importOrderSeparation": true,
+  "importOrder": [
+    "<THIRD_PARTY_MODULES>",
+    "^@/app(.*)$",
+    "^@/pages(.*)$",
+    "^@/layouts(.*)$",
+    "^@/widgets(.*)$",
+    "^@/features(.*)$",
+    "^@/entities(.*)$",
+    "^@/shared(.*)$",
+    "^[./]"
+  ]
 }

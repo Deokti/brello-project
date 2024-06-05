@@ -1,10 +1,12 @@
-import { attach, createEvent, createStore, sample } from "effector";
-import { SignInPageError } from "./types";
-import { validateEmail } from "./constants";
-import { not } from "patronum";
-import { apiAuth } from "@/shared/lib/api/apiAuth";
 import { redirect } from "atomic-router";
+import { attach, createEvent, createStore, sample } from "effector";
+import { not } from "patronum";
+
+import { apiAuth } from "@/shared/lib/api/apiAuth";
 import { ROUTES } from "@/shared/routing";
+
+import { validateEmail } from "./constants";
+import { SignInPageError } from "./types";
 
 /**
  * Аутентификация через ввод email

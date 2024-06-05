@@ -1,5 +1,5 @@
-import { InputHTMLAttributes, ReactNode } from "react";
 import cx from "classnames";
+import { InputHTMLAttributes, ReactNode } from "react";
 
 import styles from "./s-input.module.scss";
 

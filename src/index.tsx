@@ -1,10 +1,12 @@
-import ReactDOM from "react-dom/client";
-import { Provider } from "effector-react";
-import { App } from "@/app";
-import { allSettled, fork } from "effector";
 import { RouterProvider } from "atomic-router-react";
-import { routes } from "@/shared/routing";
+import { allSettled, fork } from "effector";
+import { Provider } from "effector-react";
+import ReactDOM from "react-dom/client";
+
+import { App } from "@/app";
+
 import { appStarted } from "@/shared/init";
+import { routes } from "@/shared/routing";
 
 const root = document.getElementById("root")!;
 

@@ -1,8 +1,9 @@
 import { createHistoryRouter, createRouterControls } from "atomic-router";
-import { ROUTES, routesConfig } from "@/shared/routing/route.ts";
 import { sample } from "effector";
-import { appStarted } from "@/shared/init";
 import { createBrowserHistory } from "history";
+
+import { appStarted } from "@/shared/init";
+import { ROUTES, routesConfig } from "@/shared/routing/route.ts";
 
 export { ROUTES } from "./route.ts";
 

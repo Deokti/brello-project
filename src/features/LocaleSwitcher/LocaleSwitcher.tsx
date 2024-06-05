@@ -1,8 +1,10 @@
 import { useCallback, useState } from "react";
+import ClickAwayListener from "react-click-away-listener";
 import { useTranslation } from "react-i18next";
+
 import FlagRussian from "@/shared/assets/flag-ru.svg?react";
 import FlagUSA from "@/shared/assets/flag-us.svg?react";
-import ClickAwayListener from "react-click-away-listener";
+
 import s from "./LocaleSwitcher.module.scss";
 
 const LOCALES = [

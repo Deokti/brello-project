@@ -1,18 +1,17 @@
-import { FormEvent, useCallback } from "react";
 import { useUnit } from "effector-react";
-import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import { FormEvent, useCallback } from "react";
+import { useTranslation } from "react-i18next";
 import { ClipLoader } from "react-spinners";
 
-import { SInput } from "@/shared/ui/s-input";
-
-import { SButton } from "@/shared/ui/s-button";
-import GoogleIcon from "../../assets/google-icon.svg?react";
-import { AuthPageLayout } from "../../layout/auth-page-layout";
 import { animationFromLeftToRight } from "@/pages/auth-page/model/motion.animate.ts";
 
-import { $email, $error, $pending, $success, emailChanged, formSubmitted } from "../../model/auth";
+import { SButton } from "@/shared/ui/s-button";
+import { SInput } from "@/shared/ui/s-input";
 
+import GoogleIcon from "../../assets/google-icon.svg?react";
+import { AuthPageLayout } from "../../layout/auth-page-layout";
+import { $email, $error, $pending, $success, emailChanged, formSubmitted } from "../../model/auth";
 import styles from "./sign-in-page.module.scss";
 
 export const SignInPage = () => {

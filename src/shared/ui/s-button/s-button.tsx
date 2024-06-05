@@ -1,5 +1,5 @@
-import { ButtonHTMLAttributes, ReactNode } from "react";
 import cx from "classnames";
+import { ButtonHTMLAttributes, ReactNode } from "react";
 
 import styles from "./s-button.module.scss";
 
