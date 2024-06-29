@@ -19,28 +19,36 @@ import { SignInPageError } from "./types";
  *  4.2. $error Если запрос провалился, перенаправляем на странице `auth/error`
  */
 
-const signInPost = attach({ effect: apiAuth.logInByEmail });
+const signInPost = attach({ effect: apiAuth.signInWithPassword });
 
 export const emailChanged = createEvent<string>("");
+export const passwordChanged = createEvent<string>("");
 export const formSubmitted = createEvent();
 
 export const tryAgainClicked = createEvent();
 
 export const $email = createStore<string>("");
+export const $password = createStore<string>("");
 
 export const $pending = signInPost.pending;
-export const $error = createStore<SignInPageError | null>(null);
+export const $errorEmail = createStore<SignInPageError | null>(null);
+export const $errorPassword = createStore<SignInPageError | null>(null);
 export const $success = createStore<boolean>(false);
 
 const $isValidEmail = $email.map((email) => validateEmail.test(email));
+const $isValidPassword = $password.map((password) => password.length > 6);
 
 $email.on(emailChanged, (_, newEmailValue) => newEmailValue);
+$password.on(passwordChanged, (_, newPasswordValue) => newPasswordValue);
+$errorEmail.on(signInPost.failData, (_, error) => {
+  if (error.name === "AuthApiError") return SignInPageError.RateLimit;
+});
 
 // Очищение ошибки при исправлении email
 sample({
-  clock: emailChanged,
+  clock: [emailChanged, passwordChanged],
   fn: () => null,
-  target: $error,
+  target: [$errorEmail.reinit, $errorPassword.reinit],
 });
 
 // Записывание ошибки во время валидации
@@ -48,34 +56,43 @@ sample({
   clock: formSubmitted,
   filter: not($isValidEmail),
   fn: () => SignInPageError.InvalidEmail,
-  target: $error,
+  target: $errorEmail,
+});
+
+sample({
+  clock: formSubmitted,
+  filter: not($isValidPassword),
+  fn: () => SignInPageError.InvalidPassword,
+  target: $errorPassword,
 });
 
 // Отправка запроса на API если валидация прошла успешно
 sample({
   clock: formSubmitted,
-  source: $email,
-  filter: $isValidEmail,
+  source: { email: $email, password: $password },
+  filter: () => {
+    return !not($isValidPassword).defaultState && !not($isValidEmail).defaultState;
+  },
   target: signInPost,
 });
 
 sample({
   clock: tryAgainClicked,
-  target: [$email.reinit, $error.reinit],
+  target: [$email.reinit, $password.reinit, $errorEmail.reinit],
 });
 
 sample({
   clock: signInPost.failData,
-  route: ROUTES.AUTH.ERROR.open,
+  target: ROUTES.AUTH.ERROR.open,
 });
 
 sample({
   clock: tryAgainClicked,
-  route: ROUTES.AUTH.SIGN_IN.open,
+  target: ROUTES.AUTH.SIGN_IN.open,
 });
 
 // При нажатии перерогиниться сбросить email и error
 sample({
   clock: signInPost.done,
-  route: ROUTES.AUTH.SUCCESS.open,
+  target: ROUTES.AUTH.FINALLY.open,
 });

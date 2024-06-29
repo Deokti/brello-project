@@ -10,14 +10,35 @@ import { SButton } from "@/shared/ui/s-button";
 import { SInput } from "@/shared/ui/s-input";
 
 import { AuthPageLayout } from "../../layout/auth-page-layout";
-import { $email, $error, $pending, $success, emailChanged, formSubmitted } from "../../model/auth";
+import {
+  $email,
+  $errorEmail,
+  $errorPassword,
+  $password,
+  $pending,
+  $success,
+  emailChanged,
+  formSubmitted,
+  passwordChanged,
+} from "../../model/auth";
 import styles from "./sign-in-page.module.scss";
 
 export const SignInPage = () => {
   const { t } = useTranslation("auth-page");
 
-  const [email, pending, error] = useUnit([$email, $pending, $error, $success]);
-  const [handleEmail, handleSubmitForm] = useUnit([emailChanged, formSubmitted]);
+  const [email, password, pending, errorEmail, errorPassword] = useUnit([
+    $email,
+    $password,
+    $pending,
+    $errorEmail,
+    $errorPassword,
+    $success,
+  ]);
+  const [handleEmail, handlePassword, handleSubmitForm] = useUnit([
+    emailChanged,
+    passwordChanged,
+    formSubmitted,
+  ]);
 
   const onSubmitForm = useCallback(
     (event: FormEvent<HTMLFormElement>) => {
@@ -27,7 +48,8 @@ export const SignInPage = () => {
     [handleSubmitForm],
   );
 
-  const errorMessage = error && t(`errors.${error}`);
+  const errorEmailMessage = errorEmail && t(`errors.${errorEmail}`);
+  const errorPasswordMessage = errorEmail && t(`errors.${errorPassword}`);
 
   return (
     <div className={styles.root}>
@@ -57,7 +79,19 @@ export const SignInPage = () => {
               onChange={(event) => handleEmail(event.target.value)}
               className={styles.input}
               disabled={pending}
-              errorMessage={errorMessage}
+              errorMessage={errorEmailMessage}
+            />
+          </motion.div>
+
+          <motion.div {...animationFromLeftToRight(0.3)}>
+            <SInput
+              label={"Password"}
+              value={password}
+              placeholder={t("sign-in-page.password-placeholder")}
+              onChange={(event) => handlePassword(event.target.value)}
+              disabled={pending}
+              className={styles.input}
+              errorMessage={errorPasswordMessage}
             />
           </motion.div>
 

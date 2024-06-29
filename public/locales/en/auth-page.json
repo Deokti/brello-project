@@ -3,13 +3,9 @@
     "title": "Sign In",
     "subtitle": "Start your 30-day free trial.",
     "input-placeholder": "Enter your email",
+    "password-placeholder": "Enter your password",
     "get-started": "Get started",
     "get-stated-with-google": "Sign up with Google"
-  },
-  "sign-in-page-successful": {
-    "title": "Check your email",
-    "subtitle": "We sent a login link to",
-    "back-to-log-in": "Back to log in"
   },
   "sign-in-page-error": {
     "title": "Some error happened",
@@ -17,7 +13,9 @@
     "try-again": "Try again"
   },
   "errors": {
-    "InvalidEmail": "Must be a valid email"
+    "InvalidEmail": "Must be a valid email",
+    "RateLimit": "There are too many requests. Please try again later",
+    "InvalidPassword": "The password must be 6 characters long"
   },
   "finally": {
     "successful-title": "Sign In Successful",

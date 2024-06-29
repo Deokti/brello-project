@@ -2,7 +2,7 @@ import cx from "classnames";
 import { useUnit } from "effector-react";
 import { useTranslation } from "react-i18next";
 
-import { tryAgainClicked } from "@/pages/auth-page/model/auth.ts";
+import { $errorEmail, tryAgainClicked } from "@/pages/auth-page/model/auth.ts";
 import { SignInError } from "@/pages/auth-page/ui/components/sign-in-error/sign-in-error.tsx";
 
 import styles from "./sign-in-page-error.module.scss";
@@ -13,6 +13,7 @@ interface SignInPageErrorProps {
 
 export const SignInPageError = (props: SignInPageErrorProps) => {
   const { t } = useTranslation("auth-page");
+  const error = useUnit($errorEmail);
   const handleTryAgainClicked = useUnit(tryAgainClicked);
 
   const { className } = props;
@@ -21,7 +22,7 @@ export const SignInPageError = (props: SignInPageErrorProps) => {
     <div className={cx(styles.root, className)}>
       <SignInError
         title={t("sign-in-page-error.title")}
-        subtitle={t("sign-in-page-error.subtitle")}
+        subtitle={t(`errors.${error}`)}
         onBackClick={handleTryAgainClicked}
       />
     </div>
