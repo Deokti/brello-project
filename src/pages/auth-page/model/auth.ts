@@ -1,4 +1,3 @@
-import { redirect } from "atomic-router";
 import { attach, createEvent, createStore, sample } from "effector";
 import { not } from "patronum";
 
@@ -29,7 +28,7 @@ export const tryAgainClicked = createEvent();
 
 export const $email = createStore<string>("");
 
-export const $pending = createStore<boolean>(false);
+export const $pending = signInPost.pending;
 export const $error = createStore<SignInPageError | null>(null);
 export const $success = createStore<boolean>(false);
 
@@ -60,12 +59,23 @@ sample({
   target: signInPost,
 });
 
-redirect({
-  clock: signInPost.failData,
-  route: ROUTES.AUTH.ERROR,
+sample({
+  clock: tryAgainClicked,
+  target: [$email.reinit, $error.reinit],
 });
 
-redirect({
+sample({
+  clock: signInPost.failData,
+  route: ROUTES.AUTH.ERROR.open,
+});
+
+sample({
   clock: tryAgainClicked,
-  route: ROUTES.AUTH.SIGN_IN,
+  route: ROUTES.AUTH.SIGN_IN.open,
+});
+
+// При нажатии перерогиниться сбросить email и error
+sample({
+  clock: signInPost.done,
+  route: ROUTES.AUTH.SUCCESS.open,
 });

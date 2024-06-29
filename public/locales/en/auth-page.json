@@ -18,5 +18,11 @@
   },
   "errors": {
     "InvalidEmail": "Must be a valid email"
+  },
+  "finally": {
+    "successful-title": "Sign In Successful",
+    "successful-subtitle": "Your credentials have been verified. Welcome back!",
+    "error-title": "Sign In Failed",
+    "error-subtitle": "We encountered as issue validating your sign-in link. Please ensure the link hasn't expired or been used before"
   }
 }

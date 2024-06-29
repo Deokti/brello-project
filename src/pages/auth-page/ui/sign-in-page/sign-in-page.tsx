@@ -9,7 +9,6 @@ import { animationFromLeftToRight } from "@/pages/auth-page/model/motion.animate
 import { SButton } from "@/shared/ui/s-button";
 import { SInput } from "@/shared/ui/s-input";
 
-import GoogleIcon from "../../assets/google-icon.svg?react";
 import { AuthPageLayout } from "../../layout/auth-page-layout";
 import { $email, $error, $pending, $success, emailChanged, formSubmitted } from "../../model/auth";
 import styles from "./sign-in-page.module.scss";
@@ -79,15 +78,15 @@ export const SignInPage = () => {
             >
               {t("sign-in-page.get-started")}
             </SButton>
-            <SButton
-              fullWidth
-              leftIcon={<GoogleIcon />}
-              variant={"outlined"}
-              color={"secondary"}
-              disabled={pending}
-            >
-              {t("sign-in-page.get-stated-with-google")}
-            </SButton>
+            {/*<SButton*/}
+            {/*  fullWidth*/}
+            {/*  leftIcon={<GoogleIcon />}*/}
+            {/*  variant={"outlined"}*/}
+            {/*  color={"secondary"}*/}
+            {/*  disabled={pending}*/}
+            {/*>*/}
+            {/*  {t("sign-in-page.get-stated-with-google")}*/}
+            {/*</SButton>*/}
           </motion.div>
         </form>
       </AuthPageLayout>

@@ -41,6 +41,7 @@ export const LocaleSwitcher = () => {
             {LOCALES.map((locale) => {
               return (
                 <li
+                  key={locale.id}
                   className={s.item}
                   onClick={() => onChangeLocale(locale.id)}
                 >
