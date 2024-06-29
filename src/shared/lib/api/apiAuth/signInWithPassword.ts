@@ -5,12 +5,10 @@ import { supabaseClient } from "@/shared/lib/api/client.ts";
 
 export const signInWithPasswordFx = createEffect(
   async ({ email, password }: { email: Email; password: Password }) => {
-    const { error, data } = await supabaseClient.auth.signInWithPassword({
+    const { error } = await supabaseClient.auth.signInWithPassword({
       email,
       password,
     });
-
-    console.log(data);
 
     // // TODO: Сделать всплывашку в правом нижнем углу
     if (error) {
