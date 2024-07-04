@@ -28,9 +28,9 @@ sample({
 
 $successfully.on(authSucceed, () => true);
 
-delay({
-  source: authSucceed,
-  timeout: 800,
+sample({
+  clock: delay({ source: authSucceed, timeout: 800 }),
+  filter: ROUTES.AUTH.FINALLY.$isOpened,
   target: ROUTES.HOME.open,
 });
 
@@ -49,4 +49,5 @@ sample({
   clock: tryAgainClicked,
   route: ROUTES.AUTH.SIGN_IN.open,
 });
+
 $successfully.on(authErrored, () => false);
